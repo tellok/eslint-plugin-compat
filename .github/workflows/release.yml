@@ -17,11 +17,7 @@ on:
 jobs:
   authorize:
     name: Authorize
-    runs-on:
-    - self-hosted
-    - tower
-    - ubuntu-latest
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "ubuntu-latest"]
     if: github.event_name == 'workflow_dispatch'
     steps:
     - name: ${{ github.actor }} permission check to do a release
@@ -34,11 +30,7 @@ jobs:
 
   release:
     name: Release
-    runs-on:
-    - self-hosted
-    - tower
-    - ubuntu-latest
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "ubuntu-latest"]
     needs: [authorize]
     if: |
       always() && 

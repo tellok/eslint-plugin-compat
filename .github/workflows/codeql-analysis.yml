@@ -23,12 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on:
-
-    - self-hosted
-    - tower
-    - ubuntu-latest
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "ubuntu-latest"]
     strategy:
       fail-fast: false
       matrix:

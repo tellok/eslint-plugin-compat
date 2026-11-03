@@ -2,11 +2,7 @@ name: Test
 on: [push, pull_request]
 jobs:
   test:
-    runs-on:
-    - self-hosted
-    - tower
-    - ubuntu-latest
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "ubuntu-latest"]
     strategy:
       matrix:
         eslint-version: [8, 9]
