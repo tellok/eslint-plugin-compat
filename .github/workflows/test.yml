@@ -2,7 +2,7 @@ name: Test
 on: [push, pull_request]
 jobs:
   test:
-    runs-on: ["self-hosted", "ubuntu-latest"]
+    runs-on: "ubuntu-latest"
     strategy:
       matrix:
         eslint-version: [8, 9]
